@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const dbConnection = async () => {
     try {
-        const mongodbURL = "mongodb+srv://nani:asdf@1234@portfolio-qhmju.mongodb.net/TodoApp?retryWrites=true&w=majority";
+
+        //here username and passwords are replaced for the sucurity purpose
+        const mongodbURL = "mongodb+srv://<username>:<password>@portfolio-qhmju.mongodb.net/TodoApp?retryWrites=true&w=majority";
         //Set up default mongoose connection
         mongoose.connect(mongodbURL, {
             useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false
