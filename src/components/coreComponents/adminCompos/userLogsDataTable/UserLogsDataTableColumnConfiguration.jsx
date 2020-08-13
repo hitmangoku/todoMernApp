@@ -6,8 +6,9 @@ import { Menu, Dropdown, Button } from "semantic-ui-react";
 export const columns = [
   {
     name: "Todo Title",
-    selector: (row) => (row["todo"] ? row["todo"][0].todoTitle : ""),
+    selector: (row) => (row["todo"].length>0 ? row["todo"][0].todoTitle : ""),
     sortable: true,
+    wrap: true,
   },
   {
     name: "Todo Status",
@@ -16,7 +17,7 @@ export const columns = [
   },
   {
     name: "Performed By",
-    selector: (row) => row["user"][0].firstName + " " + row["user"][0].lastName,
+    selector: (row) => row["user"].length>0?row["user"][0].firstName + " " + row["user"][0].lastName:"",
     sortable: true,
   },
   {
